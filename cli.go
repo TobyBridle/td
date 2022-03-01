@@ -211,6 +211,45 @@ func main() {
 			},
 		},
 		{
+			Name:    "progress",
+			Aliases: []string{"p"},
+			Usage:   "Set the status of a todo to \"In Progress\" by giving his id"
+			Action: func(c *cli.Context) error {
+				var err error
+
+				if c.Args().Len() != 1 {
+					fmt.Println()
+					ct.ChangeColor(ct.Red, false, ct.None, false)
+					fmt.Println("Error")
+					ct.ResetColor()
+					fmt.Println("You must provide the position of the item you want to change.")
+					fmt.Println("Example: td progress 1")
+					fmt.Println()
+					return argError
+				}
+
+				collection := collection{}
+				collection.RetrieveTodos()
+
+				id, err := strconv.ParseInt(c.Args().Get(0), 10, 32)
+				if err != nil {
+					fmt.Println(err)
+					return err
+				}
+
+				todo, err := collection.ToggleProgress(id)
+				if err != nil {
+					fmt.Println(err)
+					return err
+				}
+
+				ct.ChangeColor(ct.Cyan, false, ct.None, false)
+				fmt.Printf("Your todo is now %s.\n", todo.Status)
+				ct.ResetColor()
+				return nil
+			},
+		},
+		{
 			Name:    "clean",
 			Aliases: []string{"c"},
 			Usage:   "Remove finished todos from the list",

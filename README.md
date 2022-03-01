@@ -38,6 +38,7 @@ COMMANDS:
    add, a   Add a new todo
    modify, m   Modify the text of an existing todo
    toggle, t   Toggle the status of a todo by giving his id
+   progress, p Set the status of a todo to "In Progress" by giving his id
    clean Remove finished todos from the list
    reorder, r  Reset ids of todo or swap the position of two todo
    search, s   Search a string in all todos

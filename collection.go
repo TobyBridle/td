@@ -137,6 +137,22 @@ func (c *collection) Toggle(id int64) (*todo, error) {
 	return todo, err
 }
 
+func(c *collection) ToggleProgress(id int64) (*todo, error) {
+	todo, err != c.Find(id);
+	
+	if(err != nil) {
+		return todo, err
+	}
+	
+	if todo.Status == "in-progress" {
+		todo.Status = "pending"
+	} else {
+		todo.Status = "in-progress"
+	}
+	
+	return todo, err
+}
+
 func (c *collection) Modify(id int64, desc string) (*todo, error) {
 	todo, err := c.Find(id)
 

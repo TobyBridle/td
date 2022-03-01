@@ -1,4 +1,4 @@
-module github.com/swatto/td
+module github.com/TobyBridle/td
 
 go 1.16
 
