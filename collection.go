@@ -138,7 +138,7 @@ func (c *collection) Toggle(id int64) (*todo, error) {
 }
 
 func(c *collection) ToggleProgress(id int64) (*todo, error) {
-	todo, err != c.Find(id);
+	todo, err := c.Find(id)
 	
 	if(err != nil) {
 		return todo, err

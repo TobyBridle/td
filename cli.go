@@ -213,7 +213,7 @@ func main() {
 		{
 			Name:    "progress",
 			Aliases: []string{"p"},
-			Usage:   "Set the status of a todo to \"In Progress\" by giving his id"
+			Usage:   "Set the status of a todo to \"In Progress\" by giving his id",
 			Action: func(c *cli.Context) error {
 				var err error
 
