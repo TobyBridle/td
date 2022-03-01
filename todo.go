@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	ct "github.com/daviddengcn/go-colortext"
-	"github.com/swatto/td/printer"
+	"github.com/TobyBridle/td/printer"
 )
 
 type todo struct {
